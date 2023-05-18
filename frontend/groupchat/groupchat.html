@@ -1,0 +1,68 @@
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Chat Window</title>
+  <link rel="stylesheet" href="../public/style.css">
+  <h1 class="h1">CHAT APP</h1>
+</head>
+
+<body>
+  <div id="chat-window">
+
+    <!-- <h2 class="h2">Group Name:</h2> -->
+    <h3 class="h2" id="group-name"></h3>
+    <h2 class="h3">Group Members:</h2>
+    <ul class="a" id="user-list"></ul>
+
+    <div class="form">
+      <form id="chat-form">
+        <!-- <input class="btn" type="file" id="file">
+        <button class="btn" id="uploadbtn">Upload</button><br><br> -->
+        <input type="text" id="chat-message" placeholder="Type your message here">
+        <button class="btn" type="submit">Send</button>
+      </form>
+    </div>
+  </div><br><br>
+
+    <h2 class="h3">Group Chats:</h2>
+    <ul><li class="b" id="chat-messages"></li></ul><br><br>
+    
+  <div class="form">
+    <div id="remove-group-modal" class="modal">
+      <div class="modal-content">
+        <!-- <span class="close">&times;</span> -->
+        <form id="remove-member-form">
+          <label for="members">Remove Members</label>
+          <input type="text" id="members" name="members"><br>
+          <button class="btn" type="submit">Remove</button>
+        </form>
+      </div>
+    </div>
+  </div><br><br>
+
+  <div class="form">
+    <div id="admin-group-modal" class="modal">
+      <div class="modal-content">
+        <!-- <span class="close">&times;</span> -->
+        <form id="admin-member-form">
+          <label for="members">Make admin of the group</label>
+          <input type="text" id="memberstomakeadmin" name="members"><br>
+          <button class="btn" type="submit">Admin</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <a class="btn" href="../chat/chat.html">Back to HOME</a>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.4.1/axios.min.js">
+  </script>
+    <script src="http://localhost:8000/socket.io/socket.io.js"></script>
+
+  <script src="./groupChat.js"></script>
+</body>
+
+</html>
