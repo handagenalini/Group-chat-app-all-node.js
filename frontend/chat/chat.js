@@ -19,33 +19,9 @@ function parseJwt (token) {
   return JSON.parse(jsonPayload);
 }
 
-// chatForm.addEventListener('submit',async (event) => {
-//     event.preventDefault();
-//     const token = localStorage.getItem('token');
-//     const groupId=JSON.parse(localStorage.getItem('groupId'));
-//     const tok = parseJwt(token);
-//     let message = {text:chatMessageInput.value};
-//     let obj = { name : tok.name, text: chatMessageInput.value}
 
-//     const date = new Date().getTime(); // current time
-//     localStorage.setItem(date, JSON.stringify(obj)); // storing chat msg with time
 
-//     //remove old msg if more then 10
-//     let oldestKey = localStorage.key(0);
-//     if(localStorage.length > 11){
-//       for(let i=0;i<localStorage.length;i++){
-//         if(localStorage.key(i)<oldestKey){
-//           oldestKey = localStorage.key(i);
-//         }
-//       } //get key of lodest msg
-//       localStorage.removeItem(oldestKey);//removing oldest msg 
-//     }
-    
-//     const response = await axios.post("http://localhost:3000/users/chat",message,{headers: {'Authentication' :token}});
-//     console.log(response);
-//     socket.emit('send-message', groupId);
-//     chatMessageInput.value = '';
-//   });
+
 
 function showNewUserOnScreen(chat){
   const chatMessageElement = document.createElement('div');
@@ -55,17 +31,9 @@ function showNewUserOnScreen(chat){
 
 window.addEventListener('load', ()=>{
   getusers();
-  // let Details , details;
-  // Object.keys(localStorage).forEach((key)=>{
-  //   if(key!=='token' && key!=='groupId'){
-  //     Details = localStorage.getItem(key);
-  //     details = JSON.parse(Details);
-  //     console.log('details', details);
-  //     showNewUserOnScreen(details)
-  //   }
-  // })
+
   getGroups();
-  // getmessages();
+
 })
 
 async function getGroups(){
@@ -74,7 +42,7 @@ async function getGroups(){
   const grpdetails = response.data.groupDetails;
   const parent = document.querySelector('#groups');
   for(let i=0;i<grpdetails.length;i++){
-    let child = `<li onclick="insideGroup(${grpdetails[i].groupId})">${grpdetails[i].groupName} </li>`
+    let child = `<button class="btn btn-primary" onclick="insideGroup(${grpdetails[i].groupId})">${grpdetails[i].groupName} </button>`
     parent.innerHTML = parent.innerHTML + child
   }
 }
@@ -120,27 +88,7 @@ async function getmessages(){
   });
 }
 
-// socket.on('receive-message', async (group) => {
-//   const groupId=JSON.parse(localStorage.getItem('groupId'));
-//   console.log(">>>>>",group,groupId);
-//   console.log(group===groupId);
-//   if(group === groupId){
-//       getmessages();
-//       getusers();
-//   }
-// })
 
-// let intervalId;
-
-// function startUpdatingMessages() {
-//   // Clear any previous interval
-//   clearInterval(intervalId);
-
-//   // Set new interval to call the function every 1 second
-//   intervalId = setInterval(getmessages, 1000);
-// }
-
-// startUpdatingMessages();
 
 createGroupForm.addEventListener('submit', async(event)=>{
   event.preventDefault();

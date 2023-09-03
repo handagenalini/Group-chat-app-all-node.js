@@ -93,6 +93,7 @@ groupNameElement.textContent = grpName;
 userList.innerHTML='';
 userlist.forEach((user) => {
 const userElement = document.createElement('div');
+userElement.className='h5'
 userElement.textContent = user.name+" joined";
 userList.appendChild(userElement);
 });
@@ -116,6 +117,7 @@ const chatHistory=response.data.message;
 chatMessages.innerHTML = '';
 chatHistory.forEach((chat) => {
 const chatMessageElement = document.createElement('div');
+chatMessageElement.className="h5"
 chatMessageElement.textContent = `${chat.userName}: ${chat.message}`;
 chatMessages.appendChild(chatMessageElement);
 });

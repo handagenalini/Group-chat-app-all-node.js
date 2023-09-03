@@ -1,4 +1,4 @@
-*{
+/* *{
     margin:0;
     padding:0;
     box-sizing: border-box;
@@ -10,7 +10,7 @@ body{
   }
 .form {
   /* font-family: sans-serif;        */
-  border:black 2px solid;
+  /* border:black 2px solid;
   border-radius: 20px;
   width:max-content;
   background:rgb(199, 228, 238);
@@ -27,7 +27,7 @@ body{
     margin-left: 10px;
     cursor: pointer;
     /* font-family: cursive; */
-}
+/* }
 
 .btn:hover {
     background:blueviolet;
@@ -38,27 +38,74 @@ ul.a {
     list-style-type: square;
     list-style-position: inside;
     /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
-    line-height: 1.5;
+    /* line-height: 1.5;
     font-family: cursive;
     font-size: large;
-}
-
+} */ 
+/* 
 ul li {
     background: #d0d3d6;
     color: black;
     margin: 5px;
-    /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     line-height: 1.5;
     /* border: 2px solid rgb(32, 36, 32); */
-    padding: 5px;
-    margin-right: 1200px;
+    /* padding: 5px;
+    margin-right: 1200px; */
     /* font-family: cursive; */
-}
-h1{
+/* }  */
+/* h1{
     font-family: sans-serif;
     height: 3rem;
     text-align: center;
     padding: 5px;
     color: hwb(186 3% 66%);
     background: hwb(27 38% 8%)
-  }
+  } */ 
+  .container {
+    margin-top: 50px;
+}
+.h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #4a90e2;
+}
+.h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #4a90e2;
+}
+.h5{
+    text-align: center;
+    margin-bottom: 1px;
+    color:grey;
+}
+.form {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.btn {
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    background-color: #4a90e2;
+    color: #fff;
+}
+.btn:hover {
+    background-color: #3666af;
+}
+.text-center {
+    text-align: center;
+}
+.mt-3 {
+    margin-top: 15px;
+}
+body {
+    background-image: url('background-image.jpg');
+    background-size: cover;
+    background-position: center;
+}
